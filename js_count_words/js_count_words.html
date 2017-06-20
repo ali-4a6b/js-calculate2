@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta http-equiv="content-type" content="text/html" charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Count Words</title>
+		<link rel="stylesheet" href="js_count_words.css">
+    </head>
+    <body>
+		<h1>Calculate Words Letters</h1><br>
+		Voer tekst in <br><textarea rows="4" cols="50" id="input" oninput="countWords()"></textarea><br>
+		<button onclick="omzetten()">Omzetten</button><br>
+		<div class="blok" id="blok"></div><br>
+		<div class="blok" id="tekst"></div>
+		
+		<script>
+			
+			function countWords(){
+				var str = document.getElementById("input").value;
+				var resultaat = str.split(" ");
+				document.getElementById("blok").innerHTML = "Aantal Woorden: " + resultaat.length + "<br>" + "Aantal Tekens: " + str.length;
+			}
+			
+			function omzetten(){
+				var str = document.getElementById("input").value;
+				var resultaat = str.split(" ");
+				var res = str.toLowerCase();
+			
+				document.getElementById("tekst").innerHTML = res;
+			}
+			
+		</script>	
+    </body>
+</html>
